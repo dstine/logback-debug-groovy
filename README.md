@@ -1,11 +1,8 @@
-logback-debug-groovy
-====================
-
 Demonstrates that the system property `logback.debug` is ignored when logback is configured via Groovy.
 
 The subproject `xml-config` is configured via `logback.xml`, and the subproject `groovy-config` is configured via `logback.groovy`.
 
-When `logback.debug` is `false`, the output of both subprojects is the same.
+When `logback.debug` is `false`, the output of both subprojects is the same:
 ```
 $ gradlew clean run
 :common:clean
@@ -31,7 +28,7 @@ BUILD SUCCESSFUL
 Total time: 5.248 secs
 ```
 
-When `logback.debug` is `false`, the debug output is printed for `xml-config` but not for `groovy-config`.
+When `logback.debug` is `false`, the debug output is printed for `xml-config` but not for `groovy-config`:
 ```
 $ gradlew clean run -PenableDebug=true
 :common:clean
@@ -52,8 +49,7 @@ $ gradlew clean run -PenableDebug=true
 :xml-config:run
 11:17:54,925 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
 11:17:54,925 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
-11:17:54,925 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/C:/RUP/workspaces/general/logback-debug-groovy/xml-config/build/resources/main/logback.xml
-]
+11:17:54,925 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/C:/RUP/workspaces/general/logback-debug-groovy/xml-config/build/resources/main/logback.xml]
 11:17:55,000 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
 11:17:55,008 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
 11:17:55,025 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
