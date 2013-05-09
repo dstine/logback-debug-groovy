@@ -1,0 +1,11 @@
+apply plugin: 'application'
+
+mainClassName = 'scrach.logback.config.Runner'
+
+dependencies {
+    runtime project(':common')
+}
+
+run {
+    systemProperty 'logback.debug', project.properties.enableDebug
+}

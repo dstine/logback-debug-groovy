@@ -1,0 +1,17 @@
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile 'org.slf4j:slf4j-api:1.7.5'
+        runtime 'ch.qos.logback:logback-classic:1.0.12'
+        runtime 'ch.qos.logback:logback-core:1.0.12'
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.6'
+}
