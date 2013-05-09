@@ -8,4 +8,7 @@ dependencies {
 
 run {
     systemProperty 'logback.debug', project.properties.enableDebug
+    if (project.properties.enableStatusListener) {
+        systemProperty 'logback.statusListenerClass', 'ch.qos.logback.core.status.OnConsoleStatusListener'
+    }
 }

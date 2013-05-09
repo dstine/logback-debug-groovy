@@ -63,3 +63,44 @@ BUILD SUCCESSFUL
 
 Total time: 5.165 secs
 ```
+
+Some information is available by setting `logback.statusListenerClass=ch.qos.logback.core.status.OnConsoleStatusListener`:
+```
+$ gradlew clean run -PenableStatusListener=true
+:common:clean
+:groovy-config:clean
+:xml-config:clean
+:common:compileJava
+:common:processResources UP-TO-DATE
+:common:classes
+:common:jar
+:groovy-config:compileJava UP-TO-DATE
+:groovy-config:processResources
+:groovy-config:classes
+:groovy-config:run
+11:43:57,006 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.groovy] at [file:/C:/RUP/workspaces/general/logback-debug-groovy/groovy-config/build/resources/main/logba
+ck.groovy]
+11:43:57,661 |-INFO in ch.qos.logback.classic.gaffer.ConfigurationDelegate@55247653 - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+11:43:57,661 |-INFO in ch.qos.logback.classic.gaffer.ConfigurationDelegate@55247653 - Naming appender as [STDOUT]
+11:43:57.753 INFO  [main] scrach.logback.config.Runner:9 - hello
+:xml-config:compileJava UP-TO-DATE
+:xml-config:processResources
+:xml-config:classes
+:xml-config:run
+11:43:57,946 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+11:43:57,963 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+11:43:57,963 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/C:/RUP/workspaces/general/logback-debug-groovy/xml-config/build/resources/main/logback.xml]
+11:43:58,016 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+11:43:58,023 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+11:43:58,028 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
+11:43:58,046 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+11:43:58,078 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to DEBUG
+11:43:58,078 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
+11:43:58,078 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+11:43:58,078 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@7ef229cd - Registering current configuration as safe fallback point
+11:43:58.083 INFO  [main] scrach.logback.config.Runner:9 - hello
+
+BUILD SUCCESSFUL
+
+Total time: 4.898 secs
+```
