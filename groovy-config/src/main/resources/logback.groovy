@@ -3,4 +3,5 @@ appender("STDOUT", ConsoleAppender) {
     pattern = "%date{HH:mm:ss.SSS} %-5level [%thread] %logger:%line - %message%n"
   }
 }
-root(DEBUG, ["STDOUT"])
+root(INFO, ["STDOUT"])
+logger("com.acme", DEBUG, ["STDOUT"])
